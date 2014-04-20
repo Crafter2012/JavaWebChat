@@ -10,7 +10,7 @@ public class ConferenceRepository
 {
     private List<Conference> conferences;
     
-    ConferenceRepository()
+    public ConferenceRepository()
     {
         conferences = new ArrayList<Conference>();
     }
