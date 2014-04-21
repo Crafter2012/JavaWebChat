@@ -4,6 +4,7 @@ apply plugin: 'war'
 apply plugin: 'propdeps'
 apply plugin: 'propdeps-eclipse'
 apply plugin: 'eclipse-wtp'
+apply plugin: 'jetty'
 
 buildscript {
 	repositories {
@@ -29,6 +30,10 @@ task "create-dirs" << {
    webAppDir.mkdirs()
    sourceSets*.java.srcDirs*.each { it.mkdirs() }
    sourceSets*.resources.srcDirs*.each { it.mkdirs() }
+}
+
+jettyRun{
+    httpPort = 9000
 }
 
 dependencies {
